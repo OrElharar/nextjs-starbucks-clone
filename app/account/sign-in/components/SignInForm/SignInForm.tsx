@@ -45,7 +45,7 @@ export default function SignInForm() {
             <CustomCheckBox
                 isMarked={shouldKeepUserLoggedIn}
                 setValue={setShouldKeepUserLoggedIn}
-                description={messages.termsOfUseAgreementDescription}
+                description={messages.keepMeLoggedIn}
             />
             <div className={classes.forgotPasswordContainer}
                 onClick={()=>setIsPasswordForgotten(true)}>
