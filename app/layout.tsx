@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google'
 import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer/Footer";
 import LoginContextProvider from "@/app/contexts/login/LoginContext";
+import AlertContextProvider from "@/app/contexts/alert/AlertContext";
+import Alert from "@/app/components/general/alert/Alert";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,11 +21,14 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
           <title>Starbucks Clone Project</title>
         </head>
       <body className={inter.className}>
-      <LoginContextProvider>
-          <Header/>
-          {children}
-          <Footer/>
-      </LoginContextProvider>
+      <AlertContextProvider>
+          <LoginContextProvider>
+              <Alert/>
+              <Header/>
+              {children}
+              <Footer/>
+          </LoginContextProvider>
+      </AlertContextProvider>
       </body>
     </html>
   )

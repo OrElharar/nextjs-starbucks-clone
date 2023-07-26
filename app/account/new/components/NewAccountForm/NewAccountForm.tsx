@@ -6,12 +6,15 @@ import React from "react";
 import classes from "./NewAccountForm.module.scss";
 import CustomCheckBox from "@/app/components/general/CustomCheckBox/CustomCheckBox";
 import StarExplanation from "@/app/components/general/StarExplanation/StarExplanation";
+import {LoginContext} from "@/app/contexts/login/LoginContext";
 export default function NewAccountForm() {
     const [firstName, setFirstName] = React.useState<string>("");
     const [lastName, setLastName] = React.useState<string>("");
     const [email, setEmail] = React.useState<string>("");
     const [password, setPassword] = React.useState<string>("");
     const [areConditionsAccepted, setAreConditionsAccepted] = React.useState<boolean>(false);
+
+    const {signIn} = React.useContext(LoginContext);
     return(
         <div className={classes.newAccountFormContainer}>
             <section>
@@ -62,7 +65,12 @@ export default function NewAccountForm() {
                 />
             </section>
             <div className={classes.createAccountButtonContainer}>
-                <button>
+                <button
+                    disabled={!areConditionsAccepted || [email, password, firstName, lastName].includes("") }
+                    onClick={()=>{
+                        signIn({username: email, password, firstName, lastName});
+                    }}
+                >
                     Create Account
                 </button>
             </div>

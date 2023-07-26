@@ -1,7 +1,9 @@
 import classes from './Banner.module.scss';
 import {IBanner} from "@/entities/interfaces/banner";
 
-export default function Banner({callToActionText, imageUrl, imageAlt, title, description, backgroundColor}: IBanner) {
+export default function Banner({banner, position, bannersClicksTracker}:{banner: IBanner, position: number, bannersClicksTracker: ({bannerId, position}: {bannerId: string, position: number}) => void}) {
+    const {id, callToActionText, imageUrl, imageAlt, title, description, backgroundColor} = banner;
+
     return (
         <div className={classes.bannerContainer}
                 style={{backgroundColor: backgroundColor}}>
@@ -20,7 +22,9 @@ export default function Banner({callToActionText, imageUrl, imageAlt, title, des
                    {description}
                </div>
                <div className={classes.callToActionContainer}>
-                   <button>
+                   <button onClick={()=>{
+                          bannersClicksTracker({bannerId: id, position});
+                   }}>
                        {callToActionText}
                    </button>
                </div>

@@ -1,21 +1,18 @@
-import {PostgresAdapter } from "../../storage/postgres/PostgresAdapter";
+import {DbAdapter } from "../../storage/postgres/DbAdapter";
 import { CustomError } from "../../models/CustomError";
 import {Constants} from "@/backend/utils/Constants";
 import * as queries from "./queries";
-import pgClient from "@/backend/storage/postgres/pgClient";
+import dbClient from "@/backend/storage/postgres/dbClient";
 
 export class AuthenticationRepository {
-    private dbClient: PostgresAdapter;
+    private dbClient: DbAdapter;
 
-    constructor(dbClient: PostgresAdapter) {
-        console.log("1")
-        console.log(dbClient)
+    constructor(dbClient: DbAdapter) {
         this.dbClient = dbClient;
     }
 
-    getUserAuthData = async (username: string): Promise<{ id: string; hashedPassword: string }> => {
+    getUserAuthData = async (username: string): Promise<{ id: string; hashedPassword: string, firstName: string, lastName: string }> => {
         const sqlQuery = queries.getSelectUserAuthDataQuery();
-        await this.dbClient.testConnection();
         const response = await this.dbClient.callDbCmd(sqlQuery, [username]);
         if (response.rowCount !== 1) {
             throw new CustomError(Constants.AUTHENTICATION_FAILED_MESSAGE);
@@ -24,4 +21,4 @@ export class AuthenticationRepository {
     };
 }
 
-export default new AuthenticationRepository(pgClient);
+export default new AuthenticationRepository(dbClient);

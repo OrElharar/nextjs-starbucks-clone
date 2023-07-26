@@ -1,0 +1,24 @@
+{
+  "defaultErrorMessage": "Error.",
+  "logout": "Logout",
+   "login": "Login",
+  "signIn": "Sign in",
+  "joinNow": "Join now",
+  "findStore": "Find a store",
+  "menu": "MENU",
+  "giftCards": "GIFT CARDS",
+  "rewards": "REWARDS",
+  "footerTitle": "Starbucks Clone Project",
+  "termsOfUseAgreementDescription": "I agree to the Terms of Use and Privacy Policy",
+  "forgotPasswordQuestion": "Forgot your password?",
+  "email": "Email",
+  "password": "Password",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "requiredFieldIndication": "Indicates required field",
+  "signInPageTitle": "Sign in or create an account",
+  "joinStarbucksRewards": {
+    "title": "Join Starbucks Rewards™",
+    "description": "Join Starbucks® Rewards to earn free food and drinks, get free refills, pay and order with your phone, and more."
+  }
+}

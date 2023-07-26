@@ -1,22 +1,19 @@
-import {mockBanners} from "@/entities/interfaces/banner";
+'use client';
+
 import Banner from "@/app/components/Banners/Banner/Banner";
-
 import classes from './Banners.module.scss';
+import {useBanners} from "@/app/hooks/banners";
 export default function Banners() {
-
+const {banners, bannersClicksTracker} = useBanners();
 
     return (
         <div className={classes.bannersContainer}>
-            {mockBanners.map((banner) => {
+            {banners.map((banner, index) => {
                 return <Banner
                     key={banner.id}
-                    id={banner.id}
-                    callToActionText={banner.callToActionText}
-                    imageUrl={banner.imageUrl}
-                    imageAlt={banner.imageAlt}
-                    title={banner.title}
-                    description={banner.description}
-                    backgroundColor={banner.backgroundColor}
+                    banner={banner}
+                    bannersClicksTracker={bannersClicksTracker}
+                    position={index}
                 />
             })}
         </div>

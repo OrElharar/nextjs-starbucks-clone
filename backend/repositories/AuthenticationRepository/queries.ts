@@ -1,4 +1,5 @@
 export function getSelectUserAuthDataQuery(): string{
-    return `SELECT userid AS id, password AS "hashedPassword"
-            FROM users WHERE userid = $1`
+    return `SELECT id, hashed_password AS "hashedPassword", first_name AS "firstName", last_name AS "lastName"
+            FROM users 
+            WHERE id = $1`
 }

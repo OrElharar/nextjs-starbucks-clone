@@ -3,8 +3,17 @@ export interface IUserLoginInput {
     password: string;
 }
 
+export interface IUserSignInInput {
+    username: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+}
+
 export interface IUserDTO {
     id: string;
+    firstName: string;
+    lastName: string;
 }
 
 export interface IUserLoggedIn{

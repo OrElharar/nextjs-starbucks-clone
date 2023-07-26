@@ -1,18 +1,18 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { NextApiRequest, NextApiResponse } from "next";
-import { PostgresAdapter } from "../storage/postgres/PostgresAdapter";
+import { DbAdapter } from "../storage/postgres/DbAdapter";
 import authenticationRepository, {AuthenticationRepository} from "@/backend/repositories/AuthenticationRepository/AuthenticationRepository";
 import {Constants} from "@/backend/utils/Constants";
 import {CustomError} from "@/backend/models/CustomError";
 import {throws} from "assert";
+import {IUserDTO} from "@/entities/interfaces/user";
 
 export class AuthenticationService {
     private authenticationRepository: AuthenticationRepository;
     private secret: string;
 
     constructor({authenticationRepository, secret}: {authenticationRepository: AuthenticationRepository, secret: string}) {
-        console.log("2")
         this.authenticationRepository = authenticationRepository;
         this.secret = secret;
     }
@@ -35,7 +35,7 @@ export class AuthenticationService {
         return decoded.userId;
     };
 
-    authenticate = async ({username, password}: {username: string, password: string}): Promise<string> => {
+    authenticate = async ({username, password}: {username: string, password: string}): Promise<IUserDTO> => {
        if (!username || !password) {
            throw new CustomError(Constants.AUTHENTICATION_MISSING_PARAMS_MESSAGE)
        }
@@ -45,7 +45,11 @@ export class AuthenticationService {
            throw new CustomError(Constants.AUTHENTICATION_FAILED_MESSAGE);
        if (!validPassword)
            throw new CustomError(Constants.AUTHENTICATION_FAILED_MESSAGE);
-       return user.id;
+       return {
+           id: user.id,
+           firstName: user.firstName,
+           lastName: user.lastName
+       };
     };
 
     generateControlPanelToken = (userId: string) => {

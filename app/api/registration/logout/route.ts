@@ -1,17 +1,19 @@
 import { NextResponse } from "next/server";
 import logger from "@/backend/utils/Logger";
 import errorHandler from "@/app/api/_error";
-import {NextApiResponse} from "next";
+import { NextApiResponse } from "next";
+import authenticationMiddleware from "@/backend/middlewares/authenticationMiddleware";
+import {Constants} from "@/backend/utils/Constants";
 
-export async function POST(req: Request, res: NextApiResponse) {
+async function handler(req: Request, res: NextApiResponse) {
     try {
-        const body = await req.json()
-        const data = body;
-        console.log("Parsed JSON data:", data);
-        logger.info(`Logout data.test: ${data.test}`);
-
-        return NextResponse.json({message: "Logout success"});
+        logger.info(`/Logout successfully - userId: ${req.headers.get(Constants.USER_ID_HEADER)}`);
+        return NextResponse.json({ success: true, data: {} });
     } catch (error) {
         return errorHandler(error, req, res);
     }
 }
+
+const POST = authenticationMiddleware(handler);
+
+export { POST };

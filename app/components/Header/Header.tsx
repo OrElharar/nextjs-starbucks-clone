@@ -15,7 +15,7 @@ export default function Header() {
         <header className={classes.headerContainer}>
             <span className={classes.imgContainer}>
                 <img
-                    src={"https://upload.wikimedia.org/wikipedia/he/e/ed/Starbucks_Corporation_Logo.png"}
+                    src={"https://starbucks-clone.s3.eu-west-1.amazonaws.com/Starbucks_Corporation_Logo.png"}
                     alt={"Starbucks logo"}
                     onClick={() => {
                         setIsNavigationOpen(false);

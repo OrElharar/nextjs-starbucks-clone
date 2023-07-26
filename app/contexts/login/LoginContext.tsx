@@ -8,10 +8,10 @@ import useUser from "@/app/hooks/user";
 export const LoginContext = createContext<ILoginState>(defaultLoginState);
 
 export const LoginContextProvider = ({ children }: { children: React.ReactNode }) => {
-    const {isLoading, error, user, login} = useUser();
+    const {isLoading, error, loggedUser, login, signIn, logout} = useUser();
 
     return (
-        <LoginContext.Provider value={{ isLoading, error, user, login }}>
+        <LoginContext.Provider value={{ isLoading, error, loggedUser, login, signIn, logout }}>
             {children}
         </LoginContext.Provider>
     );

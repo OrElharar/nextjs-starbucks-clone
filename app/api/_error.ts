@@ -6,5 +6,5 @@ import {NextApiResponse} from "next";
 export default function errorHandler(error: unknown, req: Request, res: NextApiResponse) {
     logger.error(error instanceof Error ? error.message : "Unknown error");
     const err = error instanceof CustomError ? error : new CustomError("Error");
-    return NextResponse.json({ error: err.message, code: err.code }, { status: err.status })
+    return NextResponse.json({ error: {message: err.message, code: err.code} }, { status: err.status })
 }
