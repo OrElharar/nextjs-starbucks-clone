@@ -1,15 +1,22 @@
 'use client'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 import classes from "./Header.module.scss";
-import React from "react";
+import React, {useEffect} from "react";
 import Navigation from "@/app/components/Header/Navigation/Navigation";
 import BurgerToggle from "@/app/components/Header/BuregerToggle/BurgerToggle";
 import {useRouter} from "next/navigation";
 
 export default function Header() {
     const [isNavigationOpen, setIsNavigationOpen] = React.useState<boolean>(false);
+
+    useEffect(()=>{
+        if(isNavigationOpen){
+            document.body.style.overflow = "hidden";
+        }else {
+            document.body.style.overflow = "unset";
+        }
+    },[isNavigationOpen])
+
     const router = useRouter();
     return (
         <header className={classes.headerContainer}>

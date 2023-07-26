@@ -54,7 +54,7 @@ export default function Navigation({isOpen, setIsOpen}: {isOpen: boolean, setIsO
                     </div>
                 </div>
             </div>
-                {isOpen && <div className={classes.overlay}/>}
+            {isOpen && <div className={classes.overlayContainer} ><div className={classes.overlay}/> </div>}
         </>
     )
 }

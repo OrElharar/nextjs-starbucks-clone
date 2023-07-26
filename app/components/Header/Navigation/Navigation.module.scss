@@ -21,6 +21,7 @@
     flex-direction: column;
     gap: 1rem;
     margin: 2rem;
+    z-index: 105;
     span {
       display: block;
     }
@@ -66,7 +67,6 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5); /* Dark background color with transparency */
   z-index: 99; /* Adjust this value to be above the content but below the navigation */
-
 }
 
 @media (min-width: 768px) {
@@ -111,13 +111,17 @@
   }
 
   .callToActionContainer{
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
   }
 
   .overlay{
     display: none;
   }
 
+}
+
+.disable-scroll {
+  overflow: hidden;
 }
