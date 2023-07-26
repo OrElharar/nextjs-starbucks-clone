@@ -1,0 +1,25 @@
+.newAccountSubHeaderContainer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  h1{
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  h3{
+    font-size: 16px;
+    font-weight: bold;
+    color: #525050;
+  }
+
+  p{
+    color: #8f8585;
+    font-size: smaller;
+    text-align: center;
+  }
+}

@@ -1,0 +1,41 @@
+.newAccountFormContainer{
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px #ccc;
+    text-align: left;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    h6{
+        font-size: 18px;
+        font-weight: bold;
+        color: #525050;
+    }
+    h3{
+        margin: 0.5rem 0;
+    }
+    .createAccountButtonContainer{
+        display: flex;
+        justify-content: flex-end;
+
+
+        button{
+            background: #035742;
+            color: white;
+            width: 10rem;
+            height: 3.5rem;
+        }
+    }
+
+
+}
+ @media (min-width: 500px) {
+        .newAccountFormContainer{
+            margin: auto;
+        }
+    }

@@ -1,0 +1,31 @@
+.checkboxContainer {
+  display: flex;
+  gap: 0.5rem;
+  min-height: 3rem;
+  align-items: center;
+  cursor: pointer;
+
+  .checkboxWrapper {
+    height: auto;
+    .checkbox {
+      width: 2rem;
+      height:2rem;
+      border: 2px solid white; /* Set border color to white */
+      border-radius: 2px;
+    }
+    .checkboxChecked {
+      background-color: green; /* Set background color to green */
+    }
+    svg {
+      width: 2rem;
+      height: 2rem;
+      background: white; /* Set icon background color to white */
+      color: green; /* Set icon color to green */
+      float: unset;
+      z-index: 0;
+      position: relative;
+      top: 2px;
+      left: unset;
+    }
+  }
+}

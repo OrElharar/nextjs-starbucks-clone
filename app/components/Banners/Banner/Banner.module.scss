@@ -1,0 +1,51 @@
+.bannerContainer {
+  padding: 1rem 0;
+  text-align: center;
+  .imageContainer{
+    min-width: 50%;
+  }
+  .bannerTitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 1rem 0;
+  }
+  .infoContainer{
+    color: #4f4c4c;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .callToActionContainer button{
+      border-color: #4f4c4c;
+    }
+  }
+  /* Desktop Styles */
+  @media (min-width: 768px) {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    flex-direction: row-reverse;
+
+    &:nth-child(even) {
+      flex-direction: row;
+    }
+
+    .imageContainer {
+      flex: 1;
+      text-align: left;
+    }
+    .infoContainer{
+      font-size: 1.25rem;
+      padding: 2rem;
+      .bannerTitle{
+        font-size: 3rem;
+        font-weight: 600;
+      }
+    }
+
+
+  }
+}

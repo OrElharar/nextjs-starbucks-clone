@@ -1,0 +1,26 @@
+.loginTransitionContainer{
+  margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+  h3, button{
+    color: #035742;
+  }
+  h3{
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  button{
+    border-color: #035742;
+    &:hover {
+      background-color: rgba(darken(#035742, 10%), 0.15);
+    }
+  }
+  p{
+    width: 20rem;
+  }
+
+}

@@ -1,0 +1,42 @@
+.signInFormContainer{
+  height: 70vh;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  text-align: left;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .forgotPasswordContainer{
+    color: #035742;
+    text-decoration: underline;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover{
+      text-decoration: unset;
+    }
+  }
+  .signInButtonContainer{
+    display: flex;
+    justify-content: flex-end;
+
+    button{
+      background: #035742;
+      color: white;
+      width: 7rem;
+      height: 3.5rem;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .signInFormContainer{
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px #ccc;
+  }
+}
