@@ -1,6 +1,7 @@
-import { createClient } from '@vercel/postgres';
+import pg from "pg";
 import {DdCommand} from "./DdCommand";
 import {IDbResponse} from "@/backend/interfaces/DbResponse";
+// import { createClient } from '@vercel/postgres';
 
 export class PostgresAdapter{
     private pgPool: pg.Pool;
