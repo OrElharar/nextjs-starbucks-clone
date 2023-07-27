@@ -3,8 +3,10 @@ import { CustomError } from "../../models/CustomError";
 import {Constants} from "@/backend/utils/Constants";
 import * as queries from "./queries";
 import dbClient from "@/backend/storage/postgres/dbClient";
+import {IAuthenticationRepository} from "@/backend/repositories/AuthenticationRepository/IAuthenticationRepository";
 
-export class AuthenticationRepository {
+
+class AuthenticationRepository implements IAuthenticationRepository{
     private dbClient: DbAdapter;
 
     constructor(dbClient: DbAdapter) {

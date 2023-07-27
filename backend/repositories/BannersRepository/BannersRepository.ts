@@ -2,8 +2,9 @@ import {DbAdapter} from "@/backend/storage/postgres/DbAdapter";
 import {IBanner} from "@/entities/interfaces/banner";
 import * as queries from "./queries";
 import dbClient from "@/backend/storage/postgres/dbClient";
+import {IBannersRepository} from "@/backend/repositories/BannersRepository/IBannersRepository";
 
-export class BannersRepository{
+class BannersRepository implements IBannersRepository{
     private dbClient: DbAdapter;
     constructor(dbClient: DbAdapter) {
         this.dbClient = dbClient;

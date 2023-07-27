@@ -1,15 +1,19 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import authenticationRepository, {AuthenticationRepository} from "@/backend/repositories/AuthenticationRepository/AuthenticationRepository";
+import authenticationRepository from "@/backend/repositories/AuthenticationRepository/AuthenticationRepository";
 import {Constants} from "@/backend/utils/Constants";
 import {CustomError} from "@/backend/models/CustomError";
 import {IUserDTO} from "@/entities/interfaces/user";
+import {IAuthenticationRepository} from "@/backend/repositories/AuthenticationRepository/IAuthenticationRepository";
+import {IAuthenticationService} from "@/backend/services/AuthenticationService/IAuthenticationService";
 
-export class AuthenticationService {
-    private authenticationRepository: AuthenticationRepository;
+
+
+class AuthenticationService implements IAuthenticationService{
+    private authenticationRepository: IAuthenticationRepository;
     private secret: string;
 
-    constructor({authenticationRepository, secret}: {authenticationRepository: AuthenticationRepository, secret: string}) {
+    constructor({authenticationRepository, secret}: {authenticationRepository: IAuthenticationRepository, secret: string}) {
         this.authenticationRepository = authenticationRepository;
         this.secret = secret;
     }

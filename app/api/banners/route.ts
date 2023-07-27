@@ -1,6 +1,6 @@
 import errorHandler from "@/app/api/_error";
 import {NextApiResponse} from "next";
-import {bannersService} from "@/backend/services/BannersService";
+import {bannersService} from "@/backend/services/BannersService/BannersService";
 import {NextResponse} from "next/server";
 import logger from "@/backend/utils/Logger";
 

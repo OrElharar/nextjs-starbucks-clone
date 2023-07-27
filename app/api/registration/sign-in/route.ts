@@ -1,8 +1,8 @@
 import {NextApiResponse} from "next";
-import usersService from "@/backend/services/UsersService";
+import usersService from "@/backend/services/UsersService/UsersService";
 import {NextResponse} from "next/server";
 import errorHandler from "@/app/api/_error";
-import authenticationService from "@/backend/services/AuthenticationService";
+import authenticationService from "@/backend/services/AuthenticationService/AuthenticationService";
 
 export async function POST(req: Request, res: NextApiResponse) {
     try{

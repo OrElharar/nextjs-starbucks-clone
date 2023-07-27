@@ -1,10 +1,13 @@
-import {bannersRepository, BannersRepository} from "@/backend/repositories/BannersRepository/BannersRepository";
+import {bannersRepository} from "@/backend/repositories/BannersRepository/BannersRepository";
 import {IBanner} from "@/entities/interfaces/banner";
 import {CustomError} from "@/backend/models/CustomError";
+import {IBannersRepository} from "@/backend/repositories/BannersRepository/IBannersRepository";
+import {IBannersService} from "@/backend/services/BannersService/IBannersService";
 
-export class BannersService{
-    private bannersRepository: BannersRepository;
-    constructor(bannersRepository: BannersRepository) {
+
+class BannersService implements IBannersService{
+    private bannersRepository: IBannersRepository;
+    constructor(bannersRepository: IBannersRepository) {
         this.bannersRepository = bannersRepository;
     }
 

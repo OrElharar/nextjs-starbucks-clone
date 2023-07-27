@@ -1,7 +1,7 @@
 import { NextApiResponse, NextApiRequest } from 'next';
 import {NextResponse} from "next/server";
 import errorHandler from "@/app/api/_error";
-import authenticationService from "@/backend/services/AuthenticationService";
+import authenticationService from "@/backend/services/AuthenticationService/AuthenticationService";
 import {Constants} from "@/backend/utils/Constants";
 
 const authenticationMiddleware = (
