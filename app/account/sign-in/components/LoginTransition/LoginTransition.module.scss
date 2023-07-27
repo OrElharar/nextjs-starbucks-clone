@@ -1,3 +1,5 @@
+@import "@/styles/base";
+
 .loginTransitionContainer{
   margin: 3rem;
     display: flex;
@@ -7,16 +9,16 @@
     gap: 1rem;
     text-align: center;
   h3, button{
-    color: #035742;
+    color: $myDarkGreen;
   }
   h3{
     font-weight: 700;
     letter-spacing: 0.5px;
   }
   button{
-    border-color: #035742;
+    border-color: $myDarkGreen;
     &:hover {
-      background-color: rgba(darken(#035742, 10%), 0.15);
+      background-color: rgba(darken($myDarkGreen, 10%), 0.15);
     }
   }
   p{

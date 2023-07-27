@@ -1,7 +1,8 @@
 import classes from './Banner.module.scss';
 import {IBanner} from "@/entities/interfaces/banner";
+import {IBannerProps} from "@/app/components/Banners/Banner/props";
 
-export default function Banner({banner, position, bannersClicksTracker}:{banner: IBanner, position: number, bannersClicksTracker: ({bannerId, position}: {bannerId: string, position: number}) => void}) {
+export default function Banner({banner, position, bannersClicksTracker}: IBannerProps) {
     const {id, callToActionText, imageUrl, imageAlt, title, description, backgroundColor} = banner;
 
     return (

@@ -1,17 +1,19 @@
+@import "@/styles/base";
+
 .signInFormContainer{
   height: 70vh;
   width: 100%;
   max-width: 500px;
   padding: 20px;
   text-align: left;
-  background-color: #fff;
+  background-color: white;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 
   .forgotPasswordContainer{
-    color: #035742;
+    color: $myDarkGreen;
     text-decoration: underline;
     font-weight: 700;
     cursor: pointer;
@@ -24,7 +26,7 @@
     justify-content: flex-end;
 
     button{
-      background: #035742;
+      background: $myDarkGreen;
       color: white;
       width: 7rem;
       height: 3.5rem;

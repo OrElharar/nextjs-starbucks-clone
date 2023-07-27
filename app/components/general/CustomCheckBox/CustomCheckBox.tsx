@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckSquare, faSquare } from "@fortawesome/free-regular-svg-icons";
 
 import classes from "./CustomCheckBox.module.scss"
+import {ICustomCheckBoxProps} from "@/app/components/general/CustomCheckBox/props";
 
-const CustomCheckBox = ({ isMarked, setValue, description }: {isMarked: boolean, setValue: (isMarked: boolean) => void, description: string}) => {
+
+const CustomCheckBox = ({ isMarked, setValue, description }: ICustomCheckBoxProps) => {
 
     return (
         <div className={classes.checkboxContainer}>

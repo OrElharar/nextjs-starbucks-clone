@@ -1,6 +1,8 @@
+@import "@/styles/base";
+
 .footer {
   margin-top: 2rem;
-  background-color: #f0f0f0;
+  background-color: $myOffWhite;
   padding: 2rem;
   text-align: center;
 }
@@ -19,11 +21,11 @@
 .socialIcon {
   margin: 0 10px;
   font-size: 1rem;
-  color: #333;
+  color: $myGray;
   transition: color 0.2s;
 
   &:hover {
-    color: #007bff;
+    color: $myBlue;
   }
 }
 

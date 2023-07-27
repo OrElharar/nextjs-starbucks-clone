@@ -4,6 +4,5 @@ export abstract class Constants {
     public static TOKEN_EXPIRES_IN_NUMBER_OF_SECONDS : number = 12 * 60 * 60 ;
     public static USER_ID_HEADER : string = "x-user-id";
     public static AUTHENTICATION_HEADER = 'x-authorization'
-    public static DEFAULT_ERROR_MESSAGE : string = "defaultErrorMessage";
 }
 

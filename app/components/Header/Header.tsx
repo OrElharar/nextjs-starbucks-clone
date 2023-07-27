@@ -1,21 +1,18 @@
 'use client'
 
 import classes from "./Header.module.scss";
-import React, {useEffect} from "react";
+import React, {useContext} from "react";
 import Navigation from "@/app/components/Header/Navigation/Navigation";
 import BurgerToggle from "@/app/components/Header/BuregerToggle/BurgerToggle";
 import {useRouter} from "next/navigation";
+import {LoginContext} from "@/app/contexts/login/LoginContext";
+import messages from "@/public/messages.json";
+import {useDisableScroll} from "@/app/hooks/diableScroll";
 
 export default function Header() {
     const [isNavigationOpen, setIsNavigationOpen] = React.useState<boolean>(false);
-
-    useEffect(()=>{
-        if(isNavigationOpen){
-            document.body.style.overflow = "hidden";
-        }else {
-            document.body.style.overflow = "unset";
-        }
-    },[isNavigationOpen])
+    const {loggedUser, logout} = useContext(LoginContext);
+    useDisableScroll(isNavigationOpen);
 
     const router = useRouter();
     return (
@@ -23,7 +20,7 @@ export default function Header() {
             <span className={classes.imgContainer}>
                 <img
                     src={"https://starbucks-clone.s3.eu-west-1.amazonaws.com/Starbucks_Corporation_Logo.png"}
-                    alt={"Starbucks logo"}
+                    alt={messages.starbucksLtd}
                     onClick={() => {
                         setIsNavigationOpen(false);
                         router.push("/")
@@ -31,6 +28,8 @@ export default function Header() {
                 />
             </span>
             <Navigation
+                loggedUser={loggedUser}
+                logout={logout}
                 isOpen={isNavigationOpen}
                 setIsOpen={setIsNavigationOpen}
             />

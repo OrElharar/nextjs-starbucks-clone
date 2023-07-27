@@ -3,18 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons"; // Replace this with the appropriate icon you want
 
 import "./Input.scss";
-import {IValidationResponse} from "@/entities/interfaces/validationResponse";
 import Star from "@/app/components/general/Star/Star";
+import {InputProps} from "@/app/components/general/input/props";
 
-interface InputProps {
-    label: string;
-    type: string;
-    value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    validate?: (value: string) => IValidationResponse;
-    isRequired?: boolean;
 
-}
 
 const Input: React.FC<InputProps> = ({ label, type, value, validate, onChange, isRequired }) => {
     const [errorMessages, setErrorMessages] = React.useState<string[]>([]);

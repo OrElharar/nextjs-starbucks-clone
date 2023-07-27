@@ -3,8 +3,9 @@
 import React from "react";
 import classes from "./BurgerToggle.module.scss";
 import PropTypes from "prop-types";
+import {IBurgerToggleProps} from "@/app/components/Header/BuregerToggle/props";
 
-export default function BurgerToggle({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: (isOpen: boolean) => void}) {
+export default function BurgerToggle({isOpen, setIsOpen}: IBurgerToggleProps) {
     return (
         <div className={classes.box} onClick={()=>setIsOpen(!isOpen)}>
             <div className={`${classes.btn} ${isOpen ? classes.active : classes.notActive}`}>
@@ -16,7 +17,3 @@ export default function BurgerToggle({isOpen, setIsOpen}: {isOpen: boolean, setI
     )
 }
 
-BurgerToggle.propTypes = {
-    isOpen: PropTypes.bool.isRequired,
-    setIsOpen: PropTypes.func.isRequired
-};

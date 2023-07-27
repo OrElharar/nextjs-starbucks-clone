@@ -22,5 +22,8 @@
   "joinStarbucksRewards": {
     "title": "Join Starbucks Rewards™",
     "description": "Join Starbucks® Rewards to earn free food and drinks, get free refills, pay and order with your phone, and more."
-  }
+  },
+  "createAccount": "Create an account",
+  "starbucksLtd": "STARBUCKS®",
+  "joinStarbuckBenefits": "Join Starbucks Rewards to earn Stars for free food and drinks, any way you pay. Get access to mobile ordering, a birthday Reward, and more."
 }

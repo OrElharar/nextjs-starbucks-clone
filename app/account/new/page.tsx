@@ -6,7 +6,7 @@ import {LoginContext} from "@/app/contexts/login/LoginContext";
 import {useRouter} from "next/navigation";
 
 export default function NewAccountPage() {
-    const { loggedUser } = React.useContext(LoginContext);
+    const { loggedUser, signIn } = React.useContext(LoginContext);
     const router = useRouter();
 
     useEffect(()=>{
@@ -18,7 +18,7 @@ export default function NewAccountPage() {
     return (
         <>
             <NewAccountSubHeader/>
-            <NewAccountForm />
+            <NewAccountForm signIn={signIn} />
         </>
     )
 }

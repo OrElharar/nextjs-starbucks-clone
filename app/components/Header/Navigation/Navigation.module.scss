@@ -1,3 +1,5 @@
+@import "@/styles/base";
+
 .navigationContainer {
   position: fixed;
   top: 4rem;
@@ -29,7 +31,7 @@
 
   .devider {
     height: 1px;
-    background-color: #ccc;
+    background-color: $myLightGray;
     margin: 0 20px;
   }
 

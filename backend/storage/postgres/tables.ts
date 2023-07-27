@@ -28,7 +28,7 @@ export function getTablesCreationScript():string{
 
 
 // Dummy data:
-//insert into banners(call_to_action_text, image_url, image_alt, title, description, background_color)
+// insert into banners(call_to_action_text, image_url, image_alt, title, description, background_color)
 // values('Order now', 'https://starbucks-clone.s3.eu-west-1.amazonaws.com/tropical_cooldown.jpg', 'Frozen blended drink with colorful swirls in a tall glass', 'Tropical cooldown', 'Kick back with our vibrant new Frozen Pineapple Passionfruit Lemonade Starbucks Refreshers® beverage.', '#eb81a5'),
 // ('Join for free', 'https://starbucks-clone.s3.eu-west-1.amazonaws.com/summer_windays.jpg', 'SUMMER WINSDAYS logo on a multi-colored background with a frozen refresher.', 'Now 50% off cold drinks', 'WinsDays just got even cooler for Starbucks® Rewards members. Now enjoy 50% off a cold drink on Wednesdays after 12 p.m.*', '#e5ff67'),
 // ('Order now', 'https://starbucks-clone.s3.eu-west-1.amazonaws.com/summer_to_the_max.jpg', '2 cold smoothies', 'Summer to the max', 'Go for a Mocha Cookie Crumble or Caramel Ribbon Crunch Frappuccino® blended beverage.', '#8f8bf4'),

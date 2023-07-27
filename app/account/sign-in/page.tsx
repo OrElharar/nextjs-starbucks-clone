@@ -8,7 +8,7 @@ import {LoginContext} from "@/app/contexts/login/LoginContext";
 import {useRouter} from "next/navigation";
 
 export default function SignInPage() {
-    const { loggedUser } = React.useContext(LoginContext);
+    const { loggedUser, login } = React.useContext(LoginContext);
     const router = useRouter();
 
     useEffect(()=>{
@@ -20,7 +20,7 @@ export default function SignInPage() {
     return (
         <div>
             <SignInHeader/>
-            <SignInForm/>
+            <SignInForm login={login}/>
             <LoginTransition/>
         </div>
     )

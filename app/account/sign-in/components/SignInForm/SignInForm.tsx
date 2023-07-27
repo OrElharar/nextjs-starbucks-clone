@@ -5,16 +5,14 @@ import Input from "@/app/components/general/input/Input";
 import validation from "@/utils/Validation";
 import CustomCheckBox from "@/app/components/general/CustomCheckBox/CustomCheckBox";
 import classes from "./SignInForm.module.scss";
-import {LoginContext} from "@/app/contexts/login/LoginContext";
 import messages from "@/public/messages.json";
+import {ISignInFormProps} from "@/app/account/sign-in/components/SignInForm/props";
 
-
-export default function SignInForm() {
+export default function SignInForm({login}:ISignInFormProps) {
     const [email, setEmail] = React.useState<string>("");
     const [password, setPassword] = React.useState<string>("");
     const [shouldKeepUserLoggedIn, setShouldKeepUserLoggedIn] = React.useState<boolean>(false);
     const [isPasswordForgotten, setIsPasswordForgotten] = React.useState<boolean>(false);
-    const { login } = React.useContext(LoginContext);
 
     useEffect(()=>{
         if(isPasswordForgotten){

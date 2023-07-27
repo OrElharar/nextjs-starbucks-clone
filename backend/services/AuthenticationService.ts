@@ -1,11 +1,8 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { NextApiRequest, NextApiResponse } from "next";
-import { DbAdapter } from "../storage/postgres/DbAdapter";
 import authenticationRepository, {AuthenticationRepository} from "@/backend/repositories/AuthenticationRepository/AuthenticationRepository";
 import {Constants} from "@/backend/utils/Constants";
 import {CustomError} from "@/backend/models/CustomError";
-import {throws} from "assert";
 import {IUserDTO} from "@/entities/interfaces/user";
 
 export class AuthenticationService {
@@ -19,15 +16,6 @@ export class AuthenticationService {
 
     extractDecodedFromToken = (token: string): any => {
         return jwt.verify(token, this.secret);
-    };
-
-    getTokenFromHeader = (headers: string | string[] | undefined): string => {
-        if (Array.isArray(headers)) {
-            return headers[0].replace("JWT ", "");
-        } else if (typeof headers === "string") {
-            return headers.replace("JWT ", "");
-        }
-        return "";
     };
 
     extractUserFromToken = async (token: string): Promise<string> => {

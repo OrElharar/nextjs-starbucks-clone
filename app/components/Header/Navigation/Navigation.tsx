@@ -6,12 +6,13 @@ import React from "react";
 import classes from "./Navigation.module.scss";
 import PropTypes from "prop-types";
 import {useRouter} from "next/navigation";
-import {LoginContext} from "@/app/contexts/login/LoginContext";
 import messages from "@/public/messages.json";
+import {INavigationProps} from "@/app/components/Header/Navigation/props";
 
-export default function Navigation({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: (isOpen: boolean) => void}) {
+
+
+export default function Navigation({isOpen, setIsOpen, loggedUser, logout}: INavigationProps) {
     const router = useRouter();
-    const {loggedUser, logout} = React.useContext(LoginContext);
 
     return (
         <>

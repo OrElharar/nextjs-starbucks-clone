@@ -1,3 +1,5 @@
+@import "@/styles/base";
+
 .newAccountSubHeaderContainer {
   padding: 1rem;
   display: flex;
@@ -14,11 +16,11 @@
   h3{
     font-size: 16px;
     font-weight: bold;
-    color: #525050;
+    color: $myGray;
   }
 
   p{
-    color: #8f8585;
+    color: $myLightGray;
     font-size: smaller;
     text-align: center;
   }

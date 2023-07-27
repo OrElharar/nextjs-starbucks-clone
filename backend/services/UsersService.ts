@@ -1,4 +1,3 @@
-import logger, {Logger} from "@/backend/utils/Logger";
 import usersRepository, {UsersRepository} from "@/backend/repositories/UsersRepository/UsersRepository";
 import {CustomError} from "@/backend/models/CustomError";
 import bcrypt from "bcrypt";

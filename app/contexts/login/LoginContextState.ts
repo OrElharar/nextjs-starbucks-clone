@@ -1,6 +1,6 @@
 import {IUserLoggedIn, IUserLoginInput, IUserSignInInput} from "@/entities/interfaces/user";
 
-export interface ILoginState {
+export interface ILoginContextState {
     loggedUser: IUserLoggedIn | null;
     isLoading: boolean;
     error: string | null;
@@ -9,7 +9,7 @@ export interface ILoginState {
     logout: (token: string) => Promise<void>;
 }
 
-export const defaultLoginState: ILoginState = {
+export const defaultLoginContextState: ILoginContextState = {
     loggedUser: null,
     isLoading: false,
     error: null,

@@ -1,3 +1,6 @@
+@import "@/styles/base";
+
+
 .bannerContainer {
   padding: 1rem 0;
   text-align: center;
@@ -10,13 +13,13 @@
     margin: 1rem 0;
   }
   .infoContainer{
-    color: #4f4c4c;
+    color: $myGray;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 
     .callToActionContainer button{
-      border-color: #4f4c4c;
+      border-color: $myGray;
     }
   }
   /* Desktop Styles */
