@@ -3,7 +3,8 @@
   top: 2rem;
   right: 2rem;
   min-width: 10rem;
-  height: 3rem;
+  max-width: 15rem;
+  min-height: 3rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -15,7 +16,8 @@
 
 .alert-container__inner-box{
   padding: 0.75rem;
-
+  display: flex;
+  gap: 0.5rem;
   &.failed{
     background: rgba(255, 0, 0, 0.123);
     svg{
