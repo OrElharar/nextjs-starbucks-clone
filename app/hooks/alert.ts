@@ -27,5 +27,13 @@ export function useAlert(){
         setAlert(AlertStatus.None);
     };
 
-    return {alert, alertText, success, error, clear};
+    const methodNotImplemented = () => {
+        error("Method not implemented :)")
+    }
+
+    const announceActivityTracked = () => {
+        success("Activity tracked :) but the requested page was not implemented")
+    }
+
+    return {alert, alertText, success, error, clear, methodNotImplemented, announceActivityTracked};
 }

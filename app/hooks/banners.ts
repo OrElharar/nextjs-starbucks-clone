@@ -1,23 +1,23 @@
 'use client';
 
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import httpService from "@/utils/HttpService/HttpService";
+import {AlertContext} from "@/app/contexts/alert/AlertContext";
 
 export function useBanners() {
     const [banners, setBanners] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-
+    const { error, announceActivityTracked } = useContext(AlertContext)
     useEffect(() => {
         setLoading(true);
         httpService.getBanners().then(({err, data}) => {
             setLoading(false);
             if (err) {
-                setError(err.message);
+                error(err.message);
                 return;
             }
             if(data == null || data.data == null) {
-                setError("No data received");
+                error("No data received");
                 return;
             }
 
@@ -27,8 +27,10 @@ export function useBanners() {
 
     const bannersClicksTracker = async ({bannerId, position}:{bannerId: string, position: number}) => {
         const {err} = await httpService.clickBanner({bannerId, position});
-        if(err != null)
-            setError(err.message);
+        if(err != null) {
+            error(err.message);
+        }
+        announceActivityTracked();
     }
 
     return { banners, loading, error, bannersClicksTracker };

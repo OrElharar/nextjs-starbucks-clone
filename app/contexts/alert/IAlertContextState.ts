@@ -6,6 +6,8 @@ export interface IAlertContextState {
     success: (text?: string, timeout?: number) => void;
     error: (text: string, timeout?: number) => void;
     clear: () => void;
+    methodNotImplemented: () => void;
+    announceActivityTracked: () => void;
 }
 
 export const defaultAlertContextState: IAlertContextState = {
@@ -13,5 +15,7 @@ export const defaultAlertContextState: IAlertContextState = {
     alertText: null,
     success: (text?: string, timeout?: number) => {},
     error: (text: string, timeout?: number) => {},
-    clear: () => {}
+    clear: () => {},
+    methodNotImplemented: () => {},
+    announceActivityTracked: () => {},
 }

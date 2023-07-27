@@ -2,23 +2,26 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
-import React from "react";
+import React, {useContext} from "react";
 import classes from "./Navigation.module.scss";
 import PropTypes from "prop-types";
 import {useRouter} from "next/navigation";
 import messages from "@/public/messages.json";
 import {INavigationProps} from "@/app/components/Header/Navigation/props";
+import {AlertContext} from "@/app/contexts/alert/AlertContext";
 
 
 
 export default function Navigation({isOpen, setIsOpen, loggedUser, logout}: INavigationProps) {
+    const { methodNotImplemented } = useContext(AlertContext);
     const router = useRouter();
 
     return (
         <>
             <div className={`${classes.navigationContainer} ${isOpen ? classes.open : classes.close}`}>
-                <div className={classes.subNavigationContainer}>
-                    <span>{messages.menu}</span>
+                <div className={classes.subNavigationContainer}
+                     onClick={()=> methodNotImplemented()}>
+                    <span >{messages.menu}</span>
                     <span>{messages.rewards}</span>
                     <span>{messages.giftCards}</span>
                 </div>
@@ -49,7 +52,8 @@ export default function Navigation({isOpen, setIsOpen, loggedUser, logout}: INav
                         }
 
                     </div>
-                    <div className={classes.storeLocator}>
+                    <div className={classes.storeLocator}
+                         onClick={()=> methodNotImplemented()}>
                         <FontAwesomeIcon icon={faMapMarkerAlt} />
                         <span>{messages.findStore}</span>
                     </div>
